@@ -8,9 +8,9 @@ app.get('/', (req, res)  => {
 });
 
 app.get('/health', (req, res)  => {
-    res.status(200).json({message: 'Service is running'});
+    res.status(200).json({message: `Service is running on port ${process.env.PORT}`});
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log(`App listening on port ${process.env.PORT}!`);
 });
